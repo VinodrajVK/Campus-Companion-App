@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:Campus_Companion/models/chat.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:linkable/linkable.dart';
 
 class ChatScreen extends StatefulWidget {
   const ChatScreen({Key? key}) : super(key: key);
@@ -81,7 +82,9 @@ class _ChatScreenState extends State<ChatScreen> {
                               : const Color.fromARGB(255, 198, 241, 203),
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: SelectableText(messages[index].message),
+                        child: Linkable(
+                          text: messages[index].message,
+                        ),
                       ),
                     );
                   },
